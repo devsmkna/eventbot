@@ -1,0 +1,48 @@
+{
+  "name": "eventbot",
+  "version": "1.0.0",
+  "description": "A Telegram Bot to share and manage events",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev && nodemon src/index.ts",
+    "test": "",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "pretty": "prettier --check \"**/*.+(js|mjs|ts|json)\"",
+    "pretty:fix": "prettier --write \"**/*.+(js|mjs|ts|json)\"",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devsmkna/eventbot.git"
+  },
+  "keywords": [
+    "telegram"
+  ],
+  "author": "devsmkna [Davide Visco]",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devsmkna/eventbot/issues"
+  },
+  "homepage": "https://github.com/devsmkna/eventbot#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.3",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^7.17.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "env-var": "^7.5.0",
+    "telegraf": "^4.16.3"
+  }
+}
