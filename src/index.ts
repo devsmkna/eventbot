@@ -1,11 +1,14 @@
+import { connect } from "mongoose";
+import { pino } from "pino";
 import { Telegraf } from "telegraf";
 import { BOT_TOKEN, DB_URL } from "./config/env";
-import { connect } from "mongoose";
+
+export const log = pino();
 
 const init = async () => {
   try {
     await connect(DB_URL);
-    console.log("Connected to database");
+    log.info("Connected to database");
     const bot = new Telegraf(BOT_TOKEN);
 
     bot.launch();
@@ -13,7 +16,7 @@ const init = async () => {
     process.once("SIGINT", () => bot.stop("SIGINT"));
     process.once("SIGTERM", () => bot.stop("SIGTERM"));
   } catch (error) {
-    console.error(error);
+    log.error(error);
   }
 };
 
