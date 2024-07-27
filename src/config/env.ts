@@ -27,3 +27,10 @@ dotenv.config({ path: envFilePath });
  * Bot token provided by [@BotFather](https://t.me/BotFather) on bot creation
  */
 export const BOT_TOKEN = env.get("BOT_TOKEN").required().asString().trim();
+
+// DATABASE
+
+/**
+ * Database connection URL
+ */
+export const DB_URL = env.get("DB_URL").required().asUrlString().trim();

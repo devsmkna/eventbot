@@ -7,7 +7,7 @@
     "node": "20"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev && nodemon src/index.ts",
+    "dev": "cross-env NODE_ENV=dev nodemon src/index.ts",
     "test": "",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -43,6 +43,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "env-var": "^7.5.0",
+    "mongoose": "^8.5.1",
     "telegraf": "^4.16.3"
   }
 }
