@@ -2,6 +2,23 @@ import dotenv from "dotenv";
 import env from "env-var";
 import fs from "node:fs";
 import path from "node:path";
+import { pino } from "pino";
+
+/**
+ * Logger object for better log messages
+ */
+export const logger = pino({
+  transport: {
+    targets: [
+      { target: "pino-pretty" },
+      {
+        target: "pino/file",
+        options: { destination: `.log` },
+      },
+    ],
+  },
+  timestamp: pino.stdTimeFunctions.isoTime,
+});
 
 /**
  * Node enviroment, used to load the corresponding .env file
@@ -15,7 +32,8 @@ const envFilePath = path.join(__dirname, "..", "..", `.env.${NODE_ENV}`);
 
 // throw error if .env file is not found
 if (!fs.existsSync(envFilePath)) {
-  throw Error(`No .env.${NODE_ENV} file found in: ${envFilePath}`);
+  logger.fatal(`No .env.${NODE_ENV} file found in: ${envFilePath}`);
+  process.exit(1);
 }
 
 // load .env file

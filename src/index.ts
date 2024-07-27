@@ -1,22 +1,26 @@
 import { connect } from "mongoose";
-import { pino } from "pino";
 import { Telegraf } from "telegraf";
-import { BOT_TOKEN, DB_URL } from "./config/env";
-
-export const log = pino();
+import { BOT_TOKEN, DB_URL, logger } from "./config/env";
 
 const init = async () => {
   try {
     await connect(DB_URL);
-    log.info("Connected to database");
+    logger.info("Connected to database");
     const bot = new Telegraf(BOT_TOKEN);
 
     bot.launch();
+    logger.info("Bot started");
 
-    process.once("SIGINT", () => bot.stop("SIGINT"));
-    process.once("SIGTERM", () => bot.stop("SIGTERM"));
+    process.once("SIGINT", () => {
+      bot.stop("SIGINT");
+      logger.info("SIGINT: Bot stopped");
+    });
+    process.once("SIGTERM", () => {
+      bot.stop("SIGTERM");
+      logger.info("SIGTERM: Bot stopped");
+    });
   } catch (error) {
-    log.error(error);
+    logger.error(error);
   }
 };
 

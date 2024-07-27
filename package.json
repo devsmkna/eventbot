@@ -7,7 +7,7 @@
     "node": "20"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev nodemon src/index.ts | pino-pretty",
+    "dev": "cross-env NODE_ENV=dev nodemon src/index.ts",
     "test": "",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
