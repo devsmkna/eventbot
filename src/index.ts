@@ -1,6 +1,7 @@
 import { connect } from "mongoose";
 import { Telegraf } from "telegraf";
-import { BOT_TOKEN, DB_URL, logger } from "./config/env";
+import { BOT_TOKEN, DB_URL } from "./config/env";
+import logger from "./config/logger";
 
 const init = async () => {
   try {

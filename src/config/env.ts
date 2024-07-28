@@ -2,23 +2,7 @@ import dotenv from "dotenv";
 import env from "env-var";
 import fs from "node:fs";
 import path from "node:path";
-import { pino } from "pino";
-
-/**
- * Logger object for better log messages
- */
-export const logger = pino({
-  transport: {
-    targets: [
-      { target: "pino-pretty" },
-      {
-        target: "pino/file",
-        options: { destination: `.log` },
-      },
-    ],
-  },
-  timestamp: pino.stdTimeFunctions.isoTime,
-});
+import logger from "./logger";
 
 /**
  * Node enviroment, used to load the corresponding .env file
