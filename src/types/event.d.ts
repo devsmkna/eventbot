@@ -11,13 +11,13 @@ type TEvent = {
   creator: number;
   /**
    * Name of the event
-   * @minLenght 5
-   * @maxLenght 50
+   * @minLength 5
+   * @maxLength 50
    */
   name: string;
   /**
    * Description of the event, markdown formatted
-   * @maxLenght 140
+   * @maxLength 140
    */
   description?: string;
   /**
