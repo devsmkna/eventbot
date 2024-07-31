@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 import TEvent from "../types/event";
 import { interactions } from "../types/interaction";
 
