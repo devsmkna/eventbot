@@ -1,4 +1,4 @@
-export type TInteraction = {
+type TInteraction = {
   /**
    * Telegram user id
    */
@@ -14,3 +14,5 @@ export const interactions = [
   "maybe",
   "not partecipate",
 ] as const;
+
+export default TInteraction;

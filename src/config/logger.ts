@@ -1,6 +1,6 @@
 import pino from "pino";
 import { Context } from "telegraf";
-import { Commands } from "../commands/commands";
+import Cmd from "../types/cmd";
 
 /**
  * Logger object for better log messages
@@ -24,12 +24,12 @@ const logger = pino({
 });
 
 /**
- * Handle common command error
+ * Handles common command error
  * @param cmd command name
  * @param ctx Telegraf context object
  * @param err Error object
  */
-export const cmdError = (cmd: Commands, ctx: Context, err: unknown) => {
+export const cmdError = (cmd: Cmd, ctx: Context, err: unknown) => {
   logger.error(
     { err, ctx },
     `Command /${cmd} raised an error. Seek .log file for more info.`,

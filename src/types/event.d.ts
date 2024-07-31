@@ -1,6 +1,6 @@
-import { TInteraction } from "./interaction";
+import TInteraction from "./interaction";
 
-export type TEvent = {
+type TEvent = {
   /**
    * Unique identifier of the event
    */
@@ -43,3 +43,4 @@ export type TEvent = {
 };
 
 export type MockTEvent = Omit<TEvent, "id" | "createdAt" | "updatedAt">;
+export default TEvent;

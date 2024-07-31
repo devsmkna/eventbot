@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { TEvent } from "../types/event";
+import TEvent from "../types/event";
 import { interactions } from "../types/interaction";
 
 const schema = new Schema<TEvent>(
@@ -43,4 +43,6 @@ const schema = new Schema<TEvent>(
   },
 );
 
-export const MEvent = model<TEvent>("event", schema);
+const MEvent = model<TEvent>("event", schema);
+
+export default MEvent;
