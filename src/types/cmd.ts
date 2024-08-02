@@ -1,8 +1,8 @@
 enum Cmd {
-  Start = "start",
-  Help = "help",
-  List = "list",
-  Add = "add",
+  start = "start",
+  help = "help",
+  list = "list",
+  add = "add",
 }
 
 export default Cmd;

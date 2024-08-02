@@ -1,7 +1,7 @@
 import Cmd from "../types/cmd";
 import { Context } from "telegraf";
 import { cmdError } from "../config/logger";
-import locale from "../config/locale";
+import { t } from "../config/locale";
 
 /**
  * Handles start command response
@@ -9,9 +9,9 @@ import locale from "../config/locale";
  */
 const handleCmdStart = async (ctx: Context) => {
   try {
-    await ctx.reply(locale.t(`cmd-${Cmd.Start}`));
+    await ctx.reply(t(`${Cmd.start}.msg`));
   } catch (error) {
-    cmdError(Cmd.Start, ctx, error);
+    cmdError(Cmd.start, ctx, error);
   }
 };
 
