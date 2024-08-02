@@ -1,5 +1,21 @@
 {
   "translation": {
-    "cmd-start": "Welcome to Eventbot"
+    "cmd-start": "Welcome to Eventbot",
+    "start": {
+      "help": "Start @evnts_bot",
+      "msg": "Welcome to Eventbot"
+    },
+    "help": {
+      "help": "Show all availiable commands",
+      "msg": "Here the list of all availiable commands:\n\n<message>\n\n💡 Did you know?\n\nYou can ask help just for one comand!\nTry /help <cmd> next time!"
+    },
+    "list": {
+      "help": "Show all the events you've interact with",
+      "msg": ""
+    },
+    "add": {
+      "help": "Create a new event",
+      "msg": ""
+    }
   }
 }

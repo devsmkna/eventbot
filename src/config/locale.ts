@@ -8,4 +8,6 @@ locale.init({
   lng: "en",
 });
 
+export const t = locale.t;
+
 export default locale;

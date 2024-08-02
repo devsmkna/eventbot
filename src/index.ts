@@ -2,6 +2,7 @@ import { BOT_TOKEN, DB_URL } from "./config/env";
 import Cmd from "./types/cmd";
 import { Telegraf } from "telegraf";
 import { connect } from "mongoose";
+import handleCmdHelp from "./commands/help";
 import handleCmdStart from "./commands/start";
 import logger from "./config/logger";
 
@@ -11,7 +12,8 @@ const init = async () => {
     logger.info("Connected to database");
     const bot = new Telegraf(BOT_TOKEN);
 
-    bot.command(Cmd.Start, handleCmdStart);
+    bot.command(Cmd.start, handleCmdStart);
+    bot.command(Cmd.help, handleCmdHelp);
 
     bot.launch();
     logger.info("Bot started");
