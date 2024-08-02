@@ -1,6 +1,6 @@
-import pino from "pino";
-import { Context } from "telegraf";
 import Cmd from "../types/cmd";
+import { Context } from "telegraf";
+import pino from "pino";
 
 /**
  * Logger object for better log messages

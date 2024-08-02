@@ -1,5 +1,5 @@
-import locale from "i18next";
 import enJSON from "../locale/en.json";
+import locale from "i18next";
 
 locale.init({
   resources: {

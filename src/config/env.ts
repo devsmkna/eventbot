@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 import env from "env-var";
 import fs from "node:fs";
-import path from "node:path";
 import logger from "./logger";
+import path from "node:path";
 
 /**
  * Node enviroment, used to load the corresponding .env file
